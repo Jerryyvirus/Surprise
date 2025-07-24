@@ -1,0 +1,163 @@
+/* Basic Page Setup */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fffaf4;
+  color: #333;
+  text-align: center;
+  overflow-x: hidden;
+  animation: fadePageIn 1.2s ease-in;
+  position: relative;
+}
+
+@keyframes fadePageIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Bouquet Image */
+.bouquet-img {
+  margin: 40px auto 20px;
+  max-width: 600px;
+  width: 90%;
+  border-radius: 15px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  display: block;
+  animation: zoomIn 1s ease-out;
+  transition: transform 0.4s;
+  z-index: 2;
+  position: relative;
+}
+
+.bouquet-img:hover {
+  transform: scale(1.03);
+}
+
+/* Description */
+.description {
+  margin: 20px auto;
+  max-width: 700px;
+  font-size: 1.2em;
+  line-height: 1.6;
+  padding: 0 20px;
+  z-index: 2;
+  position: relative;
+}
+
+/* Footer */
+footer {
+  background-color: #f7d794;
+  padding: 18px;
+  font-size: 1em;
+  color: #6b4e16;
+  font-weight: bold;
+  margin-top: 30px;
+  border-top: 2px dashed #eec86e;
+  z-index: 2;
+  position: relative;
+}
+
+/* Fade Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.delay {
+  animation-delay: 1s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 🌸 Petal Animation */
+.petal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.petal {
+  position: absolute;
+  top: -10px;
+  width: 20px;
+  height: 20px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Pink_petal_01.svg/1024px-Pink_petal_01.svg.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: fall 10s linear infinite;
+  opacity: 0.7;
+}
+
+.petal:nth-child(1) {
+  left: 5%;
+  animation-delay: 0s;
+  animation-duration: 9s;
+}
+.petal:nth-child(2) {
+  left: 20%;
+  animation-delay: 2s;
+  animation-duration: 11s;
+}
+.petal:nth-child(3) {
+  left: 35%;
+  animation-delay: 1s;
+  animation-duration: 10s;
+}
+.petal:nth-child(4) {
+  left: 50%;
+  animation-delay: 3s;
+  animation-duration: 12s;
+}
+.petal:nth-child(5) {
+  left: 65%;
+  animation-delay: 0.5s;
+  animation-duration: 9s;
+}
+.petal:nth-child(6) {
+  left: 75%;
+  animation-delay: 1.5s;
+  animation-duration: 10s;
+}
+.petal:nth-child(7) {
+  left: 85%;
+  animation-delay: 2.5s;
+  animation-duration: 11s;
+}
+.petal:nth-child(8) {
+  left: 95%;
+  animation-delay: 3.5s;
+  animation-duration: 13s;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
